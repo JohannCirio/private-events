@@ -1,0 +1,6 @@
+<p>Hello <%= @user.name %></p><br>
+<% @user.events.each do |event| %>
+  <li><%= link_to event.name, event_path(event.id) %></li>
+<% end %>
+
+<%= link_to "Create an event", new_user_event_path(params[:id]) %>
