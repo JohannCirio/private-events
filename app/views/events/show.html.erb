@@ -1,2 +1,11 @@
 <%= @event.name %><br>
 <p>Hosted by: <%= @event.host.name %></p>
+
+<p>Guests:</p>
+<% @event.attendees.each do |guest|%>
+  <li><%= guest.name%> </li>
+<% end %>
+
+<%= form_with url: event_event_attendances_path(event_id: @event.id), method: :post do |form| %>
+  <%= form.submit "Attend event" %>
+<% end %>
