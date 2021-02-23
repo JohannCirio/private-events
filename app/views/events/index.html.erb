@@ -1,7 +1,12 @@
-<h1>Current events</h1>
-<% @events.each do |event| %>
+<h1>Upcoming events</h1>
+<% @upcoming_events.each do |event| %>
   <li> <%= link_to event.name, event_path(event.id) %> </li>
 <% end %>
+<h1>Past events</h1>
+<% @past_events.each do |event| %>
+  <li> <%= link_to event.name, event_path(event.id) %> </li>
+<% end %>
+
 
 
 <% if user_signed_in? %>

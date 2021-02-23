@@ -1,5 +1,6 @@
 <%= @event.name %><br>
 <p>Hosted by: <%= @event.host.name %></p>
+<p>Date: <%= @event.date %>  </p>
 
 <p>Guests:</p>
 <% @event.attendees.each do |guest|%>

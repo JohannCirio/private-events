@@ -1,6 +1,10 @@
+require 'date'
+
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @upcoming_events = Event.upcoming.all
+    @past_events = Event.past.all
+    @event = Event.all
   end
 
   def show
