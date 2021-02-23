@@ -8,9 +8,10 @@ class EventAttendancesController < ApplicationController
     @event = Event.find(params[:event_id])
     @user = current_user
 
-    if @event.attendees.exists?(@user_id)
+    if @event.attendees.exists?(current_user.id)
       redirect_to @event
     else
+      @event.attendees << @user
       redirect_to root_path
     end
   end

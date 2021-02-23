@@ -3,7 +3,7 @@
 
 <p>Guests:</p>
 <% @event.attendees.each do |guest|%>
-  <li><%= guest.name%> </li>
+  <li><%= link_to guest.name, user_path %> </li>
 <% end %>
 
 <%= form_with url: event_event_attendances_path(event_id: @event.id), method: :post do |form| %>

@@ -1,6 +1,11 @@
-<p>Hello <%= @user.name %></p><br>
+<p>Hello <%= @user.name %></p>
+<h1>Hosted Events:</h1>
 <% @user.events.each do |event| %>
   <li><%= link_to event.name, event_path(event.id) %></li>
 <% end %>
+<h1>Events <%= @user.name %> is attending: </h1>
+<% @user.attended_events.each do |event| %>
+  <li> <%= link_to event.name, event_path(event.id) %></li>
+<% end %><br><br>
 
 <%= link_to "Create an event", new_user_event_path(params[:id]) %>
